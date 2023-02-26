@@ -58,8 +58,22 @@ class LinkedList {
         console.log("sum is", sum);
         return sum
     }
+    length(){
+        if(!this.head) {return 0;}
+        let count = 0;
+        let runner=this.head
+        while(runner !== null){
+            count += 1;
+            // if(runner.data == value){
+            //     console.log("match!", runner.data)
+            //     return runner.data;
+            // }
+            runner=runner.next;
+            console.log(count);
+        }
+        return null;
+    }
     contains(value) {
-        
         if(!this.head) {return null;}
         let runner=this.head
         while(runner !== null){
@@ -67,7 +81,7 @@ class LinkedList {
                 console.log("match!", runner.data)
                 return runner.data;
             }
-            runner=runner.next
+            runner=runner.next;
         }
         return null;
     	// is "value" to be found anywhere in this list?
@@ -82,3 +96,4 @@ first.addFront(3).addFront(1);
 first.findSum();
 first.contains(3);
 console.log(first);
+first.length();
